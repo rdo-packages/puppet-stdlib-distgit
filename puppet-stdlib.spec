@@ -7,8 +7,8 @@
 
 
 Name:           puppet-stdlib
-Version:        XXX
-Release:        XXX
+Version:        4.12.0
+Release:        1%{?alphatag}%{?dist}
 Summary:        Standard library of resources for Puppet modules.
 License:        Apache-2.0
 
@@ -48,4 +48,6 @@ cp -rp * %{buildroot}/%{_datadir}/openstack-puppet/modules/stdlib/
 
 
 %changelog
+* Fri Sep 16 2016 Haikel Guemar <hguemar@fedoraproject.org> 4.12.0-1.66830ac.git
+- Newton update 4.12.0 (66830ac66ac4d435c56c5f3fc93592c32c087726)
 
