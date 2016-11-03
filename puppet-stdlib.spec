@@ -1,13 +1,13 @@
 %{!?upstream_version: %global upstream_version %{commit}}
 %define upstream_name puppetlabs-stdlib
-%global commit 66830ac66ac4d435c56c5f3fc93592c32c087726
+%global commit ef55080c1f32b14a3efec401d4ef8828f052d17b
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 # DO NOT REMOVE ALPHATAG
 %global alphatag .%{shortcommit}git
 
 
 Name:           puppet-stdlib
-Version:        4.12.0
+Version:        4.13.0
 Release:        1%{?alphatag}%{?dist}
 Summary:        Standard library of resources for Puppet modules.
 License:        Apache-2.0
@@ -48,6 +48,9 @@ cp -rp * %{buildroot}/%{_datadir}/openstack-puppet/modules/stdlib/
 
 
 %changelog
+* Thu Nov 03 2016 Jon Schlueter <jschluet@redhat.com> 4.13.0-1
+- Update to 4.13.0 (ef55080c1f32b14a3efec401d4ef8828f052d17b)
+
 * Fri Sep 16 2016 Haikel Guemar <hguemar@fedoraproject.org> 4.12.0-1.66830ac.git
 - Newton update 4.12.0 (66830ac66ac4d435c56c5f3fc93592c32c087726)
 
