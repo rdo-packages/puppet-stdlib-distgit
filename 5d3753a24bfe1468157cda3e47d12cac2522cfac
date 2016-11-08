@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5adbc538_0606bb20",
+        "filename": "puppet-stdlib.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 85
+      },
+      "writtenOn": "2016-11-08T22:56:13Z",
+      "side": 1,
+      "message": "This is exactly \u003d\u003d 4.13.1 why don\u0027t we use https://github.com/puppetlabs/puppetlabs-stdlib/archive/4.13.1.tar.gz as Source0 ?",
+      "range": {
+        "startLine": 3,
+        "startChar": 15,
+        "endLine": 3,
+        "endChar": 55
+      },
+      "revId": "5d3753a24bfe1468157cda3e47d12cac2522cfac",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
