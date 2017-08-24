@@ -7,8 +7,8 @@
 
 
 Name:           puppet-stdlib
-Version:        XXX
-Release:        XXX
+Version:        4.18.0
+Release:        1%{?dist}
 Summary:        Standard library of resources for Puppet modules.
 License:        ASL 2.0
 
@@ -48,3 +48,6 @@ cp -rp * %{buildroot}/%{_datadir}/openstack-puppet/modules/stdlib/
 
 
 %changelog
+* Thu Aug 24 2017 Alfredo Moralejo <amoralej@redhat.com> 4.18.0-1
+- Update to 4.18.0
+
