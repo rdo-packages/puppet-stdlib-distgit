@@ -51,3 +51,4 @@ cp -rp * %{buildroot}/%{_datadir}/openstack-puppet/modules/stdlib/
 * Thu Oct 3 2019 RDO <dev@lists.rdoproject.org> 6.1.0-1.5aa891cgit
 - Update to post 6.1.0 (5aa891c2ef8efce6eb6d1ff12e976b4753b3c4d9)
 
+
