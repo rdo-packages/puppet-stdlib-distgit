@@ -48,3 +48,4 @@ cp -rp * %{buildroot}/%{_datadir}/openstack-puppet/modules/stdlib/
 
 
 %changelog
+# REMOVEME: error caused by commit https://github.com/puppetlabs/puppetlabs-stdlib/commit/64d87d25bc7ad13992dc87de7cf9342fd90f346b
