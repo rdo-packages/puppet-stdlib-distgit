@@ -7,7 +7,7 @@
 
 
 Name:           puppet-stdlib
-Version:        8.0.0
+Version:        8.1.0
 Release:        1%{?alphatag}%{?dist}
 Summary:        Standard library of resources for Puppet modules.
 License:        ASL 2.0
@@ -48,6 +48,9 @@ cp -rp * %{buildroot}/%{_datadir}/openstack-puppet/modules/stdlib/
 
 
 %changelog
+* Wed Dec 22 2021 RDO <dev@lists.rdoproject.org> 8.1.0-1.21132c8git
+- Update to 8.1.0
+
 * Mon Sep 27 2021 RDO <dev@lists.rdoproject.org> 8.0.0-1.21132c8git
 - Update to post 8.0.0 (21132c835ae7dad55759389ad5b6e96efe4f292e)
 
