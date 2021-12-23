@@ -1,0 +1,60 @@
+From df50201bf23207b9f67996442964fa8b421754bb Mon Sep 17 00:00:00 2001
+From: David Vallee Delisle <dvd@redhat.com>
+Date: Thu, 22 Jul 2021 00:41:21 -0400
+Subject: [PATCH] Replacing URI.escape with URI::DEFAULT_PARSER
+
+URI.escape was deprecated in ruby-2.7 and removed in ruby-3.x. This
+change is breaking stdlib.
+
+Replacing URI.escape with URI::DEFAULT_PARSER is working properly.
+
+(cherry picked from commit a60df53ddf1df8b020126ddab2eddcde4f2ead21)
+---
+ lib/puppet/parser/functions/uriescape.rb | 4 ++--
+ spec/functions/uriescape_spec.rb         | 8 ++++----
+ 2 files changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/lib/puppet/parser/functions/uriescape.rb b/lib/puppet/parser/functions/uriescape.rb
+index 4078b86c..a35fca4a 100644
+--- a/lib/puppet/parser/functions/uriescape.rb
++++ b/lib/puppet/parser/functions/uriescape.rb
+@@ -25,9 +25,9 @@ module Puppet::Parser::Functions
+ 
+     result = if value.is_a?(Array)
+                # Numbers in Puppet are often string-encoded which is troublesome ...
+-               value.map { |i| i.is_a?(String) ? URI.escape(i) : i }
++               value.map { |i| i.is_a?(String) ? URI::DEFAULT_PARSER.escape(i) : i }
+              else
+-               URI.escape(value)
++               URI::DEFAULT_PARSER.escape(value)
+              end
+ 
+     return result
+diff --git a/spec/functions/uriescape_spec.rb b/spec/functions/uriescape_spec.rb
+index fdc3e20b..4d3523df 100644
+--- a/spec/functions/uriescape_spec.rb
++++ b/spec/functions/uriescape_spec.rb
+@@ -14,16 +14,16 @@ describe 'uriescape' do
+   end
+ 
+   describe 'handling normal strings' do
+-    it 'calls ruby\'s URI.escape function' do
+-      expect(URI).to receive(:escape).with('uri_string').and_return('escaped_uri_string').once
++    it 'calls ruby\'s URI::DEFAULT_PARSER.escape function' do
++      expect(URI::DEFAULT_PARSER).to receive(:escape).with('uri_string').and_return('escaped_uri_string').once
+       is_expected.to run.with_params('uri_string').and_return('escaped_uri_string')
+     end
+   end
+ 
+   describe 'handling classes derived from String' do
+-    it 'calls ruby\'s URI.escape function' do
++    it 'calls ruby\'s URI::DEFAULT_PARSER.escape function' do
+       uri_string = AlsoString.new('uri_string')
+-      expect(URI).to receive(:escape).with(uri_string).and_return('escaped_uri_string').once
++      expect(URI::DEFAULT_PARSER).to receive(:escape).with(uri_string).and_return('escaped_uri_string').once
+       is_expected.to run.with_params(uri_string).and_return('escaped_uri_string')
+     end
+   end
+-- 
+2.33.1
+
