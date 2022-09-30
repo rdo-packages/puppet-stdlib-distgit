@@ -1,14 +1,14 @@
 %{!?upstream_version: %global upstream_version %{commit}}
 %define upstream_name puppetlabs-stdlib
-%global commit 66830ac66ac4d435c56c5f3fc93592c32c087726
+%global commit 6ab03a1260ebac03c20467781dabe03c933a4c5a
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 # DO NOT REMOVE ALPHATAG
 %global alphatag .%{shortcommit}git
 
 
 Name:           puppet-stdlib
-Version:        XXX
-Release:        XXX
+Version:        8.4.0
+Release:        1%{?alphatag}%{?dist}
 Summary:        Standard library of resources for Puppet modules.
 License:        ASL 2.0
 
@@ -48,3 +48,6 @@ cp -rp * %{buildroot}/%{_datadir}/openstack-puppet/modules/stdlib/
 
 
 %changelog
+* Fri Sep 30 2022 RDO <dev@lists.rdoproject.org> 8.4.0-1.6ab03a1git
+- Update to post 8.4.0 (6ab03a1260ebac03c20467781dabe03c933a4c5a)
+
