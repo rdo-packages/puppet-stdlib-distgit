@@ -7,8 +7,8 @@
 
 
 Name:           puppet-stdlib
-Version:        6.3.0
-Release:        3%{?alphatag}%{?dist}
+Version:        6.6.0
+Release:        1%{?alphatag}%{?dist}
 Summary:        Standard library of resources for Puppet modules.
 License:        ASL 2.0
 
@@ -51,6 +51,9 @@ cp -rp * %{buildroot}/%{_datadir}/openstack-puppet/modules/stdlib/
 
 
 %changelog
+* Fri Nov 10 2023 RDO <dev@lists.rdoproject.org> 6.6.0-1.7c1ae25git
+- Update to 6.6.0
+
 * Thu Dec 23 2021 Joel Capitao <jcapitao@redhat.com> 6.3.0-3.7c1ae25git
 - Replacing URI.escape with URI-DEFAULT_PARSER
 
