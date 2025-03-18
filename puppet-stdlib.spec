@@ -2,8 +2,8 @@
 %define upstream_name puppetlabs-stdlib
 
 Name:           puppet-stdlib
-Version:        XXX
-Release:        XXX
+Version:        9.7.0
+Release:        1%{?dist}
 Summary:        Standard library of resources for Puppet modules.
 License:        ASL 2.0
 
@@ -43,3 +43,6 @@ cp -rp * %{buildroot}/%{_datadir}/openstack-puppet/modules/stdlib/
 
 
 %changelog
+* Tue Mar 18 2025 RDO <dev@lists.rdoproject.org> 9.7.0-1
+- Update to 9.7.0
+
